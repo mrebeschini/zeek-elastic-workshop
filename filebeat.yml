@@ -1,1 +1,45 @@
+#=========================== Filebeat inputs =============================
 
+filebeat.inputs:
+
+- type: log
+  pipeline: zeek
+  enabled: true
+  json.keys_under_root: true
+  
+  paths:
+    - /usr/local/bro/logs/current/*.log
+  
+  exclude_files:
+   - 'stdout\.log$'
+   - 'stderr\.log$'
+   - '\.gz$'
+
+#============================= Filebeat modules ===============================
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+#==================== Elasticsearch template setting ==========================
+
+setup.template.settings:
+  index.number_of_shards: 1
+
+#============================= Elastic Cloud ==================================
+
+cloud.id: "${CLOUD_ID}"
+cloud.auth: "elastic:${CLOUD_AUTH}"
+
+#================================ Outputs =====================================
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+#================================ Processors =====================================
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
