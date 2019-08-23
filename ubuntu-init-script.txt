@@ -1,4 +1,6 @@
 #!/bin/bash
-curl https://raw.githubusercontent.com/mrebeschini/2019BSidesLV/master/beats_install.sh > /home/centos/beats_install.sh
-chown centos:centos /home/centos/beats_install.sh
-chmod 755 /home/centos/beats_install.sh
+curl https://raw.githubusercontent.com/mrebeschini/zeek-elastic-workshop/master/instance-setup.sh > /home/centos/instance-setup.sh
+chown centos:centos /home/centos/instance-setup.sh
+chmod 755 /home/centos/instance-setup.sh
+/home/centos/instance-setup.sh &> /tmp/instance-setup.log
+rm -f /home/centos/instance-setup.sh
