@@ -1,0 +1,28 @@
+PUT _ingest/pipeline/zeek
+{
+  "description" : "Zeek logs processing pipeline",
+  "processors" : [
+    {
+      "date" : {
+        "field" : "ts",
+        "target_field" : "@timestamp",
+        "formats" : [
+          "UNIX"
+        ]
+      }
+    },
+    {
+      "remove" : {
+        "field" : "ts"
+      }
+    }
+  ],
+  "on_failure" : [
+    {
+      "set" : {
+        "value" : "{{ _ingest.on_failure_message }}",
+        "field" : "error.message"
+      }
+    }
+  ]
+}
