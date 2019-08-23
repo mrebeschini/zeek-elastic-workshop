@@ -1,4 +1,4 @@
-#=========================== Filebeat inputs =============================
+#=========================== Filebeat inputs ===================================
 
 filebeat.inputs:
 
@@ -31,14 +31,7 @@ setup.template.settings:
 cloud.id: "${CLOUD_ID}"
 cloud.auth: "elastic:${CLOUD_AUTH}"
 
-#================================ Outputs =====================================
-
-#-------------------------- Elasticsearch output ------------------------------
-output.elasticsearch:
-  # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
-
-#================================ Processors =====================================
+#================================ Processors ==================================
 
 processors:
   - add_host_metadata: ~
