@@ -15,6 +15,12 @@ PUT _ingest/pipeline/zeek
       "remove" : {
         "field" : "ts"
       }
+    },
+    {
+      "rename": {
+        "field": "service",
+        "target_field": "application"
+      }
     }
   ],
   "on_failure" : [
