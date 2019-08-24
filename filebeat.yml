@@ -2,21 +2,6 @@
 
 filebeat.inputs:
 
-- type: log
-  enabled: true
-  pipeline: zeek
-  
-  json.keys_under_root: true
-  
-  paths:
-    - /usr/local/bro/logs/current/*.log
-    - /home/ubuntu/zeek/logs/*.log
-  
-  exclude_files:
-   - 'stdout\.log$'
-   - 'stderr\.log$'
-   - '\.gz$'
-
 #============================= Filebeat modules ===============================
 
 filebeat.config.modules:
