@@ -6,3 +6,4 @@ sudo apt-get update && sudo apt-get install filebeat
 sudo cp /home/ubuntu/elastic/filebeat.yml /etc/filebeat/                                                                                                                                       
 sudo filebeat modules enable zeek                                                                                                                                                              
 sudo cp -f /home/ubuntu/elastic/zeek.yml /etc/filebeat/modules.d/ 
+sudo update-rc.d filebeat defaults 95 10
