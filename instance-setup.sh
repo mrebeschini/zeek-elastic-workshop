@@ -4,6 +4,8 @@ mkdir $ELASTIC_DIR
 #wget https://raw.githubusercontent.com/mrebeschini/zeek-elastic-workshop/master/zeek-ingest-pipeline.yml -P $ELASTIC_DIR
 wget https://raw.githubusercontent.com/mrebeschini/zeek-elastic-workshop/master/filebeat.yml -P $ELASTIC_DIR
 wget https://github.com/mrebeschini/zeek-elastic-workshop/raw/master/zeek.yml -P $ELASTIC_DIR
+wget https://github.com/mrebeschini/zeek-elastic-workshop/raw/master/install-filebeat.sh -P $ELASTIC_DIR
+chmod 755 $ELASTIC_DIR/install-filebeat.sh
 
 ZEEK_DIR=/home/ubuntu/zeek
 mkdir -p $ZEEK_DIR/logs
