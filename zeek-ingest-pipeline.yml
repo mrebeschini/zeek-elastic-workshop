@@ -17,9 +17,9 @@ PUT _ingest/pipeline/zeek
       }
     },
     {
-      "rename": {
-        "field": "service",
-        "target_field": "application"
+      "rename" : {
+        "field" : "service",
+        "target_field" : "application"
       }
     }
   ],
