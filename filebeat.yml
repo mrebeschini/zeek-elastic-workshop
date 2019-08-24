@@ -10,6 +10,7 @@ filebeat.inputs:
   
   paths:
     - /usr/local/bro/logs/current/*.log
+    - /home/ubuntu/zeek/logs/*.log
   
   exclude_files:
    - 'stdout\.log$'
