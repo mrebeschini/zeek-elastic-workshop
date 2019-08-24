@@ -12,3 +12,6 @@ tar xfvz /tmp/zeek-logs.tar.gz -C $ZEEK_DIR/logs
 rm -f /tmp/zeek-logs.tar.gz
 for i in $ZEEK_DIR/logs/*.log.gz; do gzip -d $i; done
 chown -R ubuntu:ubuntu $ZEEK_DIR
+
+apt-get update
+apt-get -y upgrade
